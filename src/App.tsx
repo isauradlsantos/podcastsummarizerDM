@@ -111,98 +111,93 @@ function App() {
   const isProcessing = processingState.stage !== 'idle' && processingState.stage !== 'completed' && processingState.stage !== 'error';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a0a23] to-[#1a1a40] text-white">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
       {/* Header */}
-      <header className="bg-white/5 backdrop-blur border-b border-white/10 shadow-lg">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-9 h-9 bg-gradient-to-br from-blue-700 to-purple-700 rounded-2xl flex items-center justify-center shadow-lg">
-                <Headphones className="w-6 h-6 text-white drop-shadow" />
-              </div>
-              <div>
-                <h1 className="text-lg font-bold text-white tracking-tight">PodcastSummarizer</h1>
-                <p className="text-xs text-blue-200 font-light">AI-powered transcription & insights</p>
-              </div>
+      <header className="bg-white/70 backdrop-blur-md shadow-sm">
+        <div className="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-neutral-800 rounded-xl flex items-center justify-center shadow-sm">
+              <Headphones className="w-5 h-5 text-blue-500" />
             </div>
-            {podcastData && (
-              <button
-                onClick={handleReset}
-                className="px-4 py-2 text-blue-200 hover:text-white font-light transition-colors duration-300 border border-blue-700 rounded-xl bg-white/5 hover:bg-blue-700/30 text-sm"
-              >
-                New Podcast
-              </button>
-            )}
+            <div>
+              <h1 className="text-2xl font-bold text-neutral-900 tracking-tight">PodcastSummarizer</h1>
+              <p className="text-xs text-neutral-500 font-normal">AI-powered transcription & insights</p>
+            </div>
           </div>
+          {podcastData && (
+            <button
+              onClick={handleReset}
+              className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-full font-medium shadow transition-all duration-200 text-sm"
+            >
+              New Podcast
+            </button>
+          )}
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6">
+      <main className="max-w-5xl mx-auto px-4">
         {!podcastData && processingState.stage === 'idle' && (
-          <div className="py-20">
+          <div className="py-24">
             {/* Hero Section */}
             <div className="text-center mb-20">
               <div className="mb-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-700 to-purple-700 rounded-3xl mx-auto flex items-center justify-center mb-8 shadow-xl">
-                  <Sparkles className="w-12 h-12 text-white drop-shadow" />
+                <div className="w-20 h-20 bg-white/60 rounded-2xl mx-auto flex items-center justify-center mb-6 shadow-sm">
+                  <Sparkles className="w-10 h-10 text-blue-500" />
                 </div>
               </div>
-              <h2 className="text-5xl font-bold text-white mb-6 leading-tight drop-shadow">
+              <h2 className="text-5xl font-bold text-neutral-900 mb-4 leading-tight">
                 Transform podcasts into
                 <br />
-                <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-gradient-x">
-                  actionable insights
-                </span>
+                <span className="text-blue-600">actionable insights</span>
               </h2>
-              <p className="text-xl text-blue-200 font-light max-w-2xl mx-auto leading-relaxed">
-                Get AI-generated summaries, key highlights, and full transcripts from any podcast episode. 
-                Perfect for busy professionals who want to stay informed.
+              <p className="text-lg text-neutral-500 font-normal max-w-2xl mx-auto leading-relaxed">
+                Get AI-generated summaries, key highlights, and full transcripts from any podcast episode. Perfect for busy professionals who want to stay informed.
               </p>
             </div>
 
             {/* Features */}
             <div className="grid md:grid-cols-3 gap-12 mb-20 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-900/60 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Headphones className="w-8 h-8 text-blue-400" />
+                <div className="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <Headphones className="w-7 h-7 text-blue-500" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">Smart Transcription</h3>
-                <p className="text-blue-200 font-light leading-relaxed">Accurate speech-to-text with speaker identification and timestamps</p>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Smart Transcription</h3>
+                <p className="text-neutral-500 font-normal leading-relaxed">Accurate speech-to-text with speaker identification and timestamps</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-900/60 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Sparkles className="w-8 h-8 text-purple-400" />
+                <div className="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <Sparkles className="w-7 h-7 text-blue-500" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">AI Summaries</h3>
-                <p className="text-blue-200 font-light leading-relaxed">Concise summaries that capture the essence of long-form content</p>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">AI Summaries</h3>
+                <p className="text-neutral-500 font-normal leading-relaxed">Concise summaries that capture the essence of long-form content</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-indigo-900/60 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <TrendingUp className="w-8 h-8 text-indigo-400" />
+                <div className="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <TrendingUp className="w-7 h-7 text-blue-500" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">Key Highlights</h3>
-                <p className="text-blue-200 font-light leading-relaxed">Interactive highlights with timestamps for quick navigation</p>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Key Highlights</h3>
+                <p className="text-neutral-500 font-normal leading-relaxed">Interactive highlights with timestamps for quick navigation</p>
               </div>
             </div>
 
             {/* Input Section */}
             <div className="max-w-2xl mx-auto">
-              <div className="bg-white/10 rounded-3xl shadow-xl border border-white/20 p-12 backdrop-blur">
+              <div className="bg-white/80 rounded-3xl shadow-md border border-neutral-200 p-10 backdrop-blur-md">
                 <div className="space-y-10">
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-6">Enter Podcast URL</h4>
+                    <h4 className="text-lg font-semibold text-neutral-900 mb-6">Enter Podcast URL</h4>
                     <UrlInput onUrlSubmit={handleUrlSubmit} disabled={isProcessing} />
                   </div>
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t border-white/20" />
+                      <div className="w-full border-t border-neutral-200" />
                     </div>
                     <div className="relative flex justify-center text-sm">
-                      <span className="px-4 bg-[#18182f] text-blue-300 font-light">or</span>
+                      <span className="px-4 bg-white text-neutral-400 font-normal">or</span>
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-6">Upload Audio File</h4>
+                    <h4 className="text-lg font-semibold text-neutral-900 mb-6">Upload Audio File</h4>
                     <FileUpload
                       onFileSelect={handleFileUpload}
                       maxSize={200}
@@ -287,9 +282,9 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white/5 border-t border-white/10 mt-20">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="text-center text-blue-200 font-light">
+      <footer className="bg-white/70 border-t border-neutral-200 mt-20">
+        <div className="max-w-5xl mx-auto px-4 py-8">
+          <div className="text-center text-neutral-400 font-normal">
             <p>&copy; 2025 PodcastSummarizer. Powered by AI for smarter listening.</p>
           </div>
         </div>
