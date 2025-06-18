@@ -99,7 +99,7 @@ export default function FileUpload({ onFileSelect, maxSize, accept, disabled }: 
           </div>
           
           <div>
-            <p className={`text-lg font-light ${error ? 'text-red-700' : 'text-gray-700'}`}>
+            <p className={`text-lg font-light ${error ? 'text-red-700' : 'text-white'}`}>
               {error ? 'Upload Error' : isDragging ? 'Drop your file here' : 'Drop your audio file here'}
             </p>
             <p className={`text-sm font-light ${error ? 'text-red-600' : 'text-gray-500'}`}>
