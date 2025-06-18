@@ -137,67 +137,39 @@ function App() {
 
       <main className="max-w-5xl mx-auto px-4">
         {!podcastData && processingState.stage === 'idle' && (
-          <div className="py-24">
-            {/* Hero Section */}
-            <div className="text-center mb-20">
-              <div className="mb-8">
-                <div className="w-20 h-20 bg-white/60 rounded-2xl mx-auto flex items-center justify-center mb-6 shadow-sm">
-                  <Sparkles className="w-10 h-10 text-blue-500" />
+          <div className="py-6">
+            {/* Hero Section with Input */}
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="flex items-center justify-center mb-3">
+                <div className="bg-blue-500 p-6 rounded-lg shadow-lg">
+                  <h1 className="text-4xl font-bold text-white">
+                    Transform podcasts into
+                    <br />
+                    actionable insights
+                  </h1>
                 </div>
               </div>
-              <h2 className="text-5xl font-bold text-neutral-900 mb-4 leading-tight">
-                Transform podcasts into
-                <br />
-                <span className="text-blue-600">actionable insights</span>
-              </h2>
-              <p className="text-lg text-neutral-500 font-normal max-w-2xl mx-auto leading-relaxed">
-                Get AI-generated summaries, key highlights, and full transcripts from any podcast episode. Perfect for busy professionals who want to stay informed.
-              </p>
-            </div>
 
-            {/* Features */}
-            <div className="grid md:grid-cols-3 gap-12 mb-20 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <Headphones className="w-7 h-7 text-blue-500" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Smart Transcription</h3>
-                <p className="text-neutral-500 font-normal leading-relaxed">Accurate speech-to-text with speaker identification and timestamps</p>
-              </div>
-              <div className="text-center">
-                <div className="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <Sparkles className="w-7 h-7 text-blue-500" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">AI Summaries</h3>
-                <p className="text-neutral-500 font-normal leading-relaxed">Concise summaries that capture the essence of long-form content</p>
-              </div>
-              <div className="text-center">
-                <div className="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <TrendingUp className="w-7 h-7 text-blue-500" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Key Highlights</h3>
-                <p className="text-neutral-500 font-normal leading-relaxed">Interactive highlights with timestamps for quick navigation</p>
-              </div>
-            </div>
-
-            {/* Input Section */}
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-white/80 rounded-3xl shadow-md border border-neutral-200 p-10 backdrop-blur-md">
-                <div className="space-y-10">
+              <div className="bg-white/80 rounded-xl shadow-md border border-neutral-200 p-4 backdrop-blur-md">
+                <p className="text-sm text-neutral-500 font-normal mb-4">
+                  Get AI-generated summaries, key highlights, and full transcripts from any podcast episode.
+                </p>
+                
+                <div className="space-y-4">
                   <div>
-                    <h4 className="text-lg font-semibold text-neutral-900 mb-6">Enter Podcast URL</h4>
+                    <h4 className="text-sm font-semibold text-neutral-900 mb-2">Enter Podcast URL</h4>
                     <UrlInput onUrlSubmit={handleUrlSubmit} disabled={isProcessing} />
                   </div>
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                       <div className="w-full border-t border-neutral-200" />
                     </div>
-                    <div className="relative flex justify-center text-sm">
-                      <span className="px-4 bg-white text-neutral-400 font-normal">or</span>
+                    <div className="relative flex justify-center text-xs">
+                      <span className="px-2 bg-white text-neutral-400 font-normal">or</span>
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-neutral-900 mb-6">Upload Audio File</h4>
+                    <h4 className="text-sm font-semibold text-neutral-900 mb-2">Upload Audio File</h4>
                     <FileUpload
                       onFileSelect={handleFileUpload}
                       maxSize={200}
@@ -207,10 +179,36 @@ function App() {
                   </div>
                 </div>
               </div>
-              {/* Ad Section */}
-              <div className="mt-12">
-                <AdSection type="sidebar" />
+            </div>
+
+            {/* Features */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-8">
+              <div className="text-center">
+                <div className="w-10 h-10 bg-neutral-800 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-sm">
+                  <Headphones className="w-5 h-5 text-blue-500" />
+                </div>
+                <h3 className="text-sm font-semibold text-neutral-900 mb-1">Smart Transcription</h3>
+                <p className="text-xs text-neutral-500 font-normal">Accurate speech-to-text with speaker identification</p>
               </div>
+              <div className="text-center">
+                <div className="w-10 h-10 bg-neutral-800 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-sm">
+                  <Sparkles className="w-5 h-5 text-blue-500" />
+                </div>
+                <h3 className="text-sm font-semibold text-neutral-900 mb-1">AI Summaries</h3>
+                <p className="text-xs text-neutral-500 font-normal">Concise summaries of long-form content</p>
+              </div>
+              <div className="text-center">
+                <div className="w-10 h-10 bg-neutral-800 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-sm">
+                  <TrendingUp className="w-5 h-5 text-blue-500" />
+                </div>
+                <h3 className="text-sm font-semibold text-neutral-900 mb-1">Key Highlights</h3>
+                <p className="text-xs text-neutral-500 font-normal">Interactive highlights with timestamps</p>
+              </div>
+            </div>
+
+            {/* Ad Section */}
+            <div className="mt-6">
+              <AdSection type="sidebar" />
             </div>
           </div>
         )}

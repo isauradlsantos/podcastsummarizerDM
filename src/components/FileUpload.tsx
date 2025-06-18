@@ -68,7 +68,7 @@ export default function FileUpload({ onFileSelect, maxSize, accept, disabled }: 
   return (
     <div className="w-full">
       <div
-        className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all duration-300 ${
+        className={`relative border-2 border-dashed rounded-2xl p-6 text-center transition-all duration-300 ${
           isDragging && !disabled
             ? 'border-purple-400 bg-purple-50'
             : error
@@ -89,20 +89,20 @@ export default function FileUpload({ onFileSelect, maxSize, accept, disabled }: 
           disabled={disabled}
         />
         
-        <div className="flex flex-col items-center space-y-4">
-          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${error ? 'bg-red-100' : 'bg-gray-100'}`}>
+        <div className="flex items-center space-x-4">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${error ? 'bg-red-100' : 'bg-gray-100'}`}>
             {error ? (
-              <AlertCircle className="w-8 h-8 text-red-500" />
+              <AlertCircle className="w-5 h-5 text-red-500" />
             ) : (
-              <Upload className="w-8 h-8 text-gray-400" />
+              <Upload className="w-5 h-5 text-gray-400" />
             )}
           </div>
           
           <div>
-            <p className={`text-lg font-light ${error ? 'text-red-700' : 'text-white'}`}>
+            <p className={`text-sm font-light ${error ? 'text-red-700' : 'text-white'}`}>
               {error ? 'Upload Error' : isDragging ? 'Drop your file here' : 'Drop your audio file here'}
             </p>
-            <p className={`text-sm font-light ${error ? 'text-red-600' : 'text-gray-500'}`}>
+            <p className={`text-xs font-light text-center ${error ? 'text-red-600' : 'text-gray-500'}`}>
               {error ? error : `or click to browse (max ${maxSize}MB)`}
             </p>
           </div>
