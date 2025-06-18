@@ -285,7 +285,7 @@ function App() {
       <footer className="bg-white/70 border-t border-neutral-200 mt-20">
         <div className="max-w-5xl mx-auto px-4 py-8">
           <div className="text-center text-neutral-400 font-normal">
-            <p>&copy; 2025 PodcastSummarizer. Powered by AI for smarter listening.</p>
+            <p>&copy; 2025 PodcastSummarizer. Powered by <a href="http://darkmatter.is" target="_blank" rel="noopener noreferrer" className="underline text-blue-400 hover:text-blue-600">Darkmatter</a> for smarter listening.</p>
           </div>
         </div>
       </footer>
